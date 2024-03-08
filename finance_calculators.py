@@ -38,17 +38,21 @@ if user_input.lower() == "investment":
     #Simple   
     if user_input.lower() == "simple":
         amount = percentage * (1+rate*time_years)
-        print("Depositing £" + amount_deposited + " with an interest rate of " + interest_rate + " %" + " for " + 
-              number_years + " years using simple interest will return you:")
-        print("£" + format(amount, '.2f'))
+        total = format(amount, '.2f')
+        print(f'''
+Depositing £ {amount_deposited} with an interest rate of {interest_rate}% for 
+{number_years} years using simple interest will return you:''')
+        print(f"£{total}")
     
     #Compound
     elif user_input.lower() == "compound":
         amount = percentage*math.pow((1+rate),time_years)
+        total = format(amount, '.2f')
         print()
-        print("Depositing £" + amount_deposited + " with an interest rate of " + interest_rate + " %" + " for " + 
-              number_years + " years using compound interest will return you:")
-        print("£ " + format(amount, '.2f'))
+        print(f'''
+Depositing £{amount_deposited} with an interest rate of {interest_rate}% for 
+{number_years} years using compound interest will return you:''')
+        print(f"£{total}")
         
         
         
@@ -72,11 +76,13 @@ elif user_input.lower() == "bond":
         num_months = int(number_months)
         
         repayment = (interest*property_value)/(1-(1+interest)**(-number_months))
+        total = format(repayment, '.2f')
         
         print()
-        print("For a house costing £" + house_value + " with an interest rate of " + interest_rate + " %" + " over " + 
-              number_months + " months, your monthly repayment will be: ")
-        print("£ " + format(repayment, '.2f'))
+        print(f'''
+For a house costing £{house_value} with an interest rate of {interest_rate}% over  
+{number_months} months, your monthly repayment will be: ''')
+        print(f"£{total}")
               
               
               
