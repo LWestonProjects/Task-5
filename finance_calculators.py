@@ -27,9 +27,9 @@ if user_input.lower() == "investment":
     number_years = input("How many years do you want to invest for?\n")
     user_input = input("Would you like to calculate using 'simple' or 'compound' method?\n")
     
-    r = float(interest_rate) / 100
-    p = float(amount_deposited)
-    t = float(number_years)
+    rate = float(interest_rate) / 100
+    percentage = float(amount_deposited)
+    time_years = float(number_years)
     
     #Interest Check
     while user_input.lower() not in ["simple", "compound"]:
@@ -37,18 +37,18 @@ if user_input.lower() == "investment":
     
     #Simple   
     if user_input.lower() == "simple":
-        a = p * (1+r*t)
+        amount = percentage * (1+rate*time_years)
         print("Depositing £" + amount_deposited + " with an interest rate of " + interest_rate + " %" + " for " + 
               number_years + " years using simple interest will return you:")
-        print("£" + format(a, '.2f'))
+        print("£" + format(amount, '.2f'))
     
     #Compound
     elif user_input.lower() == "compound":
-        a = p*math.pow((1+r),t)
+        amount = percentage*math.pow((1+rate),time_years)
         print()
         print("Depositing £" + amount_deposited + " with an interest rate of " + interest_rate + " %" + " for " + 
               number_years + " years using compound interest will return you:")
-        print("£ " + format(a, '.2f'))
+        print("£ " + format(amount, '.2f'))
         
         
         
@@ -67,11 +67,11 @@ elif user_input.lower() == "bond":
         
         number_months = input("And how many months are you looking to repay in?\n")
             
-        p = float(house_value)
-        i = (float(interest_rate)/100)/12
-        n = int(number_months)
+        property_value = float(house_value)
+        interest = (float(interest_rate)/100)/12
+        num_months = int(number_months)
         
-        repayment = (i*p)/(1-(1+i)**(-n))
+        repayment = (interest*property_value)/(1-(1+interest)**(-number_months))
         
         print()
         print("For a house costing £" + house_value + " with an interest rate of " + interest_rate + " %" + " over " + 
@@ -84,3 +84,4 @@ elif user_input.lower() == "bond":
         
 print()       
 print("Finished")
+    
