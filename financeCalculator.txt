@@ -1,0 +1,43 @@
+
+
+start
+
+investment or bond
+
+ask user and switch accordingly (make sure the word is not case sensitive)
+add in a message if correct input is not used
+
+investment 
+    ask for amount of money they are depositing
+    ask for interest rate as a percentage using only numbers (no need for %)
+    ask for the number of years they plan on investing
+
+    ask for simple or compund interest
+
+        simple
+            A=P*(1+r*t)
+
+        compound
+            A=P*math.pow((1+r),t)
+        
+        r = interest rate / 100
+        P = amount deposited
+        t = number of years 
+        A = total amount once interest has been applied
+    print result
+
+Bond
+    ask for value of the house
+    ask for the interest rate as a number
+    ask for number of months they plan to repay the bond
+
+        repayment=(i*P)/(1-(1+i)**(-n))
+
+        P = value of the house
+        i = monthly interest rate, annual/100 /12
+        n = number of months of repayment
+
+    calculate the monthly payment and print
+
+    
+
